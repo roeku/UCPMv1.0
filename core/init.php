@@ -9,4 +9,5 @@ require('functions/calendar.php');
 require('functions/general.php');
 require('functions/employee.php');
 require('functions/add.php');
+require('functions/delete.php');
 ?>
