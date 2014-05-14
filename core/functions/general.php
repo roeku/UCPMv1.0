@@ -3,6 +3,7 @@ function timestampToHours($mysqltime){
 	return date('H:i',strtotime($mysqltime));
 }
 
+// now
 function amIInAnAppointment($moment, $date, $userID){
 	$command="SELECT * FROM `UCPM_appointments` WHERE (TIME(starttime) < '$moment') AND (TIME(endtime) > '$moment') AND (DATE(starttime) > $date) AND (userID=1)";
 	
@@ -15,4 +16,15 @@ function amIInAnAppointment($moment, $date, $userID){
 	}
 }
 
+// for the day
+function foundAppointment($day, $month, $year, $userID){
+	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND (TIMESTAMP(endtime) > CONVERT_TZ(NOW(),'+00:00','+2:00')) AND userID=$userID ORDER BY starttime ASC");
+	if (mysql_num_rows($result) == 0){
+		return false;
+	} else {
+		while($row = mysql_fetch_array($result)){
+			return true;
+			}
+	}	
+}
 ?>

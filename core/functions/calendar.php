@@ -10,6 +10,7 @@ function getAppointments($day, $month, $year, $userID){
 	}	
 }
 
+
 function getAllAppointments($day, $month, $year, $userID){
 	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND userID=$userID ORDER BY starttime ASC");
 	if (mysql_num_rows($result) == 0){
