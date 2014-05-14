@@ -5,7 +5,10 @@
 	<div id="st-container" class="st-container">
 	BAM
 	<?php deleteEvent($curday, $curmonth, $curyear, $curdate, 1);
-		echo 'heloo'; ?>
+		echo $curday;
+		echo $curmont;
+		echo $curyear;
+		?>
 	</div><!--st-container-->
 
 <script src="js/classie.js"></script>
