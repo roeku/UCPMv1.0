@@ -6,6 +6,7 @@ $userID=1;
 require('database/connect.php');
 
 require('functions/calendar.php');
+require('functions/colleagues.php');
 require('functions/general.php');
 require('functions/employee.php');
 require('functions/add.php');

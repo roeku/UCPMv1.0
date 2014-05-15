@@ -1,17 +1,5 @@
 <?php
 
-function getColleaguesName($userID){
-	$result = mysql_query("SELECT name FROM `UCPM_employees` WHERE userID=$userID");
-	if (mysql_num_rows($result) == 0){
-		echo 'No name found';
-	} else {
-		while($row = mysql_fetch_array($result)){
-			echo $row['name'];
-			}
-	}	
-}
-
-/*
 //get other peeps appointments with names
 function getOthersAppointments($day, $month, $year, $userID){
 	//echo '<h1>Colleagues</h1>';
@@ -37,6 +25,18 @@ function getColleagues($userID){
 			}
 	}	
 }
-*/
+
+
+function getColleaguesName($userID){
+	$result = mysql_query("SELECT name FROM `UCPM_employees` WHERE userID=$userID");
+	if (mysql_num_rows($result) == 0){
+		echo 'No name found';
+	} else {
+		while($row = mysql_fetch_array($result)){
+			echo $row['name'];
+			}
+	}	
+}
+
 
 ?>
