@@ -9,8 +9,11 @@
 	$moment = $_POST['start_hour'] . ':' . $_POST['start_min'] . ':00';
 	$date = $_POST['date_year'] . '-' . $_POST['date_month'] . '-' . $_POST['date_day'];
 
+	postEvent($userID, $title, $location, $start, $end, $invitee, $label);
+	postEvent($invitee, $title, $location, $start, $end, $userID, $label);
+	echo '<p class="succes">Event added to your and your invitees agenda.</p>';
 
-if (amIInAnAppointment($moment, $date, $userID)==false && amIInAnAppointment($moment, $date, $userID)==false && $invitee!=0){
+/*if (amIInAnAppointment($moment, $date, $userID)==false && amIInAnAppointment($moment, $date, $userID)==false && $invitee!=0){
 	postEvent($userID, $title, $location, $start, $end, $invitee, $label);
 	postEvent($invitee, $title, $location, $start, $end, $userID, $label);
 	echo '<p class="succes">Event added to your and your invitees agenda.</p>';
@@ -22,7 +25,7 @@ if (amIInAnAppointment($moment, $date, $userID)==false && amIInAnAppointment($mo
 	echo '<p class="succes">The event was added to your agenda.</p>';
 } else {
 	echo '<p class="succes">The event could not be added, you already have an appointment planned at that time.</p>';
-}
+}*/
 			
 ?>
 </section>

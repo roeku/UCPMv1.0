@@ -47,11 +47,7 @@
 	<select name="start_hour">
 	<?php
 		for ($i=0; $i<24; $i++) {
-			if ($i==date('h')+2){
-				echo '<option value="'.sprintf("%02s", date('h')).'" selected="selected">'.sprintf("%02s", $i).'</option>';
-			} else {
-				echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
-			}
+			echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
 		}
 	?>
 	</select>
@@ -59,11 +55,7 @@
 	<select name="start_min">
 	<?php
 		for ($i=0; $i<60; $i=$i+5) {
-			if ($i<$curmin){
-				echo '<option value="'.sprintf("%02s", $i).'" selected="selected">'.sprintf("%02s", $i).'</option>';
-			} else {
-				echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
-			}
+			echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
 		}
 	?>
 	</select><br/>
@@ -72,22 +64,14 @@
 	<select name="end_hour">
 	<?php
 		for ($i=0; $i<24; $i++) {
-			if ($i==date('h')+3){
-				echo '<option value="'.sprintf("%02s", date('h')).'" selected="selected">'.sprintf("%02s", $i).'</option>';
-			} else {
-				echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
-			}
+			echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
 		}
 	?>
 	</select>
 	<select name="end_min">
 	<?php
 		for ($i=0; $i<60; $i=$i+5) {
-			if ($i<$curmin){
-				echo '<option value="'.sprintf("%02s", $i).'" selected="selected">'.sprintf("%02s", $i).'</option>';
-			} else {
-				echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
-			}
+			echo '<option value="'.sprintf("%02s", $i).'">'.sprintf("%02s", $i).'</option>';
 		}
 	?>
 	</select>
@@ -95,7 +79,7 @@
 	<p>Invitees</p>
 	<select name="invitee">
 		<?php listEmployees($userID);?>
-		<option value="0">None</option>		
+		<!--<option value="0">None</option>	-->	
 	</select>
 	
 	<p>Label</p>
