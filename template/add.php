@@ -86,6 +86,7 @@
 	<select name="label">
 		<option value="professional" selected="selected">Professional</option>
 		<option value="private">Private</option>
+		<option value="holiday">Holiday</option>
 	</select> <br/>
 
 	</form>
