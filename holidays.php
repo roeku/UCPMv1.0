@@ -16,8 +16,7 @@ $righticon='detail';
 		<div class="st-pusher">
 			<div class="st-content">
 				<?php include('template/status.php') ?>
-				<?php include('template/holiday.php');
-				echo $q;?>
+				<?php include('template/holiday.php'); ?>
 			</div><!--st-content-->
 		</div><!--st-pusher-->
 	</div><!--st-container-->

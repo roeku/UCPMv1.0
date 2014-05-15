@@ -3,7 +3,7 @@
 		//todo
 	}
 	
-	function checkForProfessionalAppointments($day, $month, $year, $userID){
+	function checkForProfessionalAppointments($date, $bufferdate ,$userID){
 		$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND label='professional' AND userID=$userID");
 		if (mysql_num_rows($result) > 0){
 			return true;
