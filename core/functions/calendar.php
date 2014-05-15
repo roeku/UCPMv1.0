@@ -19,8 +19,27 @@ function getAllAppointments($day, $month, $year, $userID){
 			echo '<li><div class="time">'.timestampToHours($row['starttime']).' till '.timestampToHours($row['endtime']).'</div><div class="title">'.$row['title'].'</div><div class="location">'.$row['location'].'</div></li>';
 			}
 	}	
+	getOthersAppointments($day, $month, $year, $userID);
 }
 
+//get other peeps appointments with names
+function getOthersAppointments($day, $month, $year, $userID){
+	//echo '<h1>Colleagues</h1>';
+	$result = mysql_query("SELECT * FROM `UCPM_appointments` INNER JOIN `UCPM_employees` ON UCPM_appointments.userID = UCPM_employees.userID WHERE $userID!=inviteesID AND (DATE(starttime) = '$year-$month-$day') AND UCPM_appointments.userID!=$userID ORDER BY starttime ASC");
+	if (mysql_num_rows($result) == 0){
+		echo '<li><div class="empty">Nothing planned for this day…</div></li>';
+	} else {
+		while($row = mysql_fetch_array($result)){
+			echo '<li><div class="time">'.timestampToHours($row['starttime']).' till '.timestampToHours($row['endtime']).'</div><div class="title">'.$row['title'].'</div><div class="location">'.$row['location'].'</div><div class="title">'.$row['name'].'</div></li>';
+			}
+	}	
+}
+
+/*
+function meetingsTogether(){
+	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND inviteesID!=0")
+}
+*/
 
 /*function checkDayForPrivateAppointment($day, $month, $year){
 	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND label='private' AND userID=1");

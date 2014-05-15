@@ -16,7 +16,7 @@ $righticon='';
 		<div class="st-pusher">
 			<div class="st-content">
 				<?php include('template/status.php') ?>
-				<?php include('template/overview.php') ?>
+				<?php include('template/c_overview.php') ?>
 			</div><!--st-content-->
 		</div><!--st-pusher-->
 	</div><!--st-container-->
