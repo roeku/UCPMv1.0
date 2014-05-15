@@ -9,6 +9,6 @@
 			<a href="colleagues.php"><li><span class="icon-user menu-icon"></span></span>Colleagues</li></a>
 			<a href="holidays.php"><li><span class="icon-briefcase menu-icon"></span></span>Holidays</li></a>
 			<a href="carpooling.php"><li><span class="icon-road menu-icon"></span></span>Carpooling</li></a>
-			<a href="cooking.php"><li><span class="icon-food menu-icon"></span></span>Cooking</li></a>
+			<a href="cooking_select.php"><li><span class="icon-food menu-icon"></span></span>Cooking</li></a>
 		</ul>
 </nav>

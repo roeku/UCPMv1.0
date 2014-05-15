@@ -10,4 +10,5 @@ require('functions/general.php');
 require('functions/employee.php');
 require('functions/add.php');
 require('functions/delete.php');
+require('functions/cooking.php');
 ?>
