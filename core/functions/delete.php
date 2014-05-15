@@ -8,6 +8,7 @@ function deleteEvent($day, $month, $year, $time, $buffertime, $userID){
 	checkDeleted($day, $month, $year, $userID);
 }
 
+// give feedback on deletion
 function checkDeleted($day, $month, $year, $userID) {
 	if(mysql_affected_rows() !== 0){
 		echo '<p class="succes">You\'ve just cancelled '. mysql_affected_rows() . ' appointments. Your colleagues have been notified.</p>';
@@ -17,8 +18,7 @@ function checkDeleted($day, $month, $year, $userID) {
 }
 
 function checkInvitees() {
-	
+	//to do
 }
 
 ?>
-
