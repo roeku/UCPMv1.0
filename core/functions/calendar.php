@@ -21,10 +21,6 @@ function getAllAppointments($day, $month, $year, $userID){
 	}	
 }
 
-function emergencySnoes($addedtime) {
-	$result = mysql_query("UPDATE `UCPM_appointments` SET (DATE(starttime) = '$year-$month-$day') AND (TIMESTAMP(endtime) > CONVERT_TZ(NOW(),'+00:00','+3:00')) WHERE userID=$userID ORDER BY starttime ASC");
-	echo 'feg';
-}
 
 /*function checkDayForPrivateAppointment($day, $month, $year){
 	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND label='private' AND userID=1");

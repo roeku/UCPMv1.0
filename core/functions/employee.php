@@ -6,4 +6,12 @@ function getEmployee($user, $info){
 		}
 }
 
+//get other peeps data
+function checkOthers($userID) {
+	$result = mysql_query("SELECT * FROM `UCPM_employees` WHERE userID!=$userID");
+	while($row = mysql_fetch_array($result)){
+		
+	}
+}
+
 ?>
