@@ -10,7 +10,6 @@ function getAppointments($day, $month, $year, $userID){
 	}	
 }
 
-
 function getAllAppointments($day, $month, $year, $userID){
 	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND userID=$userID ORDER BY starttime ASC");
 	if (mysql_num_rows($result) == 0){
@@ -22,6 +21,10 @@ function getAllAppointments($day, $month, $year, $userID){
 	}	
 }
 
+function emergencySnoes($addedtime) {
+	$result = mysql_query("UPDATE `UCPM_appointments` SET (DATE(starttime) = '$year-$month-$day') AND (TIMESTAMP(endtime) > CONVERT_TZ(NOW(),'+00:00','+3:00')) WHERE userID=$userID ORDER BY starttime ASC");
+	echo 'feg';
+}
 
 /*function checkDayForPrivateAppointment($day, $month, $year){
 	$result = mysql_query("SELECT * FROM `UCPM_appointments` WHERE (DATE(starttime) = '$year-$month-$day') AND label='private' AND userID=1");
@@ -42,5 +45,8 @@ function checkDayForProfessionalAppointment($day, $month, $year){
 	}
 	return $matchFound;
 }
+
+--deletebutton in getAllappointment--
+<li><div class="delete"><input type="submit" name="deleteItem" value="'.$row['userID'].'"/></div></li>
 */
 ?>

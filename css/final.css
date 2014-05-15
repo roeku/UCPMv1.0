@@ -166,8 +166,11 @@ button, input[type=submit] {
 
 .thisday ul {
 	padding: 0 15%;
-	height: 180px;
 	overflow: hidden;
+}
+
+.overview_thisday ul {
+	height: 180px;
 }
 
 .thisday ul li{
